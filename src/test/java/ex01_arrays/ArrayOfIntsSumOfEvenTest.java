@@ -46,5 +46,15 @@ class ArrayOfIntsSumOfEvenTest {
 
     }
 
+    @Test
+    void sumOfEven_onlyEvenNums() {
+
+        ArrayOfInts aoi = new ArrayOfInts();
+        int i = aoi.sumOfEven(new int [] {2, 4, 6});
+
+        assertEquals(12, i);
+
+    }
+
 
 }
