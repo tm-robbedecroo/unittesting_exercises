@@ -37,6 +37,19 @@ public class ArrayOfInts {
         return sumOfInts(Arrays.copyOfRange(copy, arrayOfInts.length-ax, arrayOfInts.length));
     }
 
+    public int countMostPopularNumber(int[] arrayOfInts) {
+        if(arrayOfInts == null || arrayOfInts.length == 0) return 0;
+        int max = 0, hits = 0;
+        for(int i = 0; i < arrayOfInts.length; i++){
+            for(int j = i ; j < arrayOfInts.length; j++){
+                if(arrayOfInts[j] == arrayOfInts[i]) hits++;
+            }
+            if(hits > max) max = hits;
+            hits = 0;
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         ArrayOfInts ex1 = new ArrayOfInts();
         int result = ex1.sumOfInts(new int[]{1, 2, 3, 4});
